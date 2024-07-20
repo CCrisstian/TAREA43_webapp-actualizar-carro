@@ -33,6 +33,9 @@ public class Carro {
         return items.stream().mapToInt(ItemCarro::getImporte).sum();
     }
 
+
+    /*------ACTUALIZAR_BORRAR----------*/
+
     public void actualizarProducto(int id, int cantidad) {
         Optional<ItemCarro> item = items.stream()
                                         .filter(i -> i.getProducto().getId() == id)

@@ -20,10 +20,10 @@ public class ActualizarCarroServlet extends HttpServlet {
             Enumeration<String> parametros = req.getParameterNames();
 
             while (parametros.hasMoreElements()) {
-                String para = parametros.nextElement();
-                if (para.startsWith("cantidad_")) {
-                    int id = Integer.parseInt(para.substring(9));
-                    int cantidad = Integer.parseInt(req.getParameter(para));
+                String param = parametros.nextElement();
+                if (param.startsWith("cantidad_")) {
+                    int id = Integer.parseInt(param.substring(9));
+                    int cantidad = Integer.parseInt(req.getParameter(param));
                     carro.actualizarProducto(id, cantidad);
                 }
             }

@@ -20,9 +20,11 @@ public class AgregarCarroServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Long id = Long.parseLong(req.getParameter("id"));
+        Long id = Long.parseLong(req.getParameter("id")); /*Recibe el 'id' del producto a agregar*/
+
         ProductoService service = new ProductoServiceImpl();
-        Optional<Producto> producto = service.porId(id);
+        Optional<Producto> producto = service.porId(id); /*Busca el 'producto' con esa 'id' */
+
         if (producto.isPresent()) {
             ItemCarro item = new ItemCarro(1, producto.get());
             HttpSession session = req.getSession();
